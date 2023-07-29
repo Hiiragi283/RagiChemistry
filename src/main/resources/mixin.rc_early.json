@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "package": "hiiragi283.chemistry.mixin",
+  "refmap": "mixins.ragi_chemistry.refmap.json",
+  "target": "@env(DEFAULT)",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinBlockFire",
+    "MixinBlockMagma",
+    "MixinBlockStaticLiquid",
+    "MixinBlockTorch"
+  ],
+  "server": [],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}
