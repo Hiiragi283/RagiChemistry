@@ -1,4 +1,4 @@
-package hiiragi283.chemistry.capability.energy
+package hiiragi283.chemistry.api.capability.energy
 
 import net.minecraft.nbt.NBTTagCompound
 import net.minecraft.tileentity.TileEntity

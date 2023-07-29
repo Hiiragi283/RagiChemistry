@@ -1,4 +1,4 @@
-package hiiragi283.chemistry.capability.item
+package hiiragi283.chemistry.api.capability.item
 
 import net.minecraft.item.ItemStack
 import net.minecraft.nbt.NBTTagCompound
@@ -13,10 +13,10 @@ import net.minecraftforge.items.IItemHandlerModifiable
  * Thanks to SkyTheory!
  */
 
-class RCItemHandlerWrapper(vararg itemHandlers: RCItemHandler<*>) : IItemHandler, IItemHandlerModifiable,
+class RCItemHandlerWrapper(vararg itemHandlers: RCItemHandler) : IItemHandler, IItemHandlerModifiable,
     INBTSerializable<NBTTagCompound> {
 
-    private val pairs: MutableList<Pair<RCItemHandler<*>, Int>> = mutableListOf()
+    private val pairs: MutableList<Pair<RCItemHandler, Int>> = mutableListOf()
 
     init {
         for (itemHandler in itemHandlers) {
@@ -42,7 +42,7 @@ class RCItemHandlerWrapper(vararg itemHandlers: RCItemHandler<*>) : IItemHandler
 
     override fun getSlotLimit(slot: Int): Int = 64
 
-    fun getSlotHandler(slot: Int): Pair<RCItemHandler<*>, Int> = pairs[slot]
+    fun getSlotHandler(slot: Int): Pair<RCItemHandler, Int> = pairs[slot]
 
     //    Extraction    //
 

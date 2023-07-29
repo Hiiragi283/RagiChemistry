@@ -1,4 +1,4 @@
-package hiiragi283.chemistry.tile
+package hiiragi283.chemistry.api.tile
 
 object RCTileKey {
 

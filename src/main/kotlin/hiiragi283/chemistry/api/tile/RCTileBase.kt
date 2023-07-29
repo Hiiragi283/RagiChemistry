@@ -1,8 +1,10 @@
-package hiiragi283.chemistry.tile
+package hiiragi283.chemistry.api.tile
 
-import hiiragi283.chemistry.capability.energy.RCEnergyStorage
-import hiiragi283.chemistry.capability.fluid.RCFluidTankWrapper
-import hiiragi283.chemistry.capability.item.RCItemHandlerWrapper
+import hiiragi283.chemistry.RCGuiHandler
+import hiiragi283.chemistry.RagiChemistry
+import hiiragi283.chemistry.api.capability.energy.RCEnergyStorage
+import hiiragi283.chemistry.api.capability.fluid.RCFluidTankWrapper
+import hiiragi283.chemistry.api.capability.item.RCItemHandlerWrapper
 import net.minecraft.block.state.IBlockState
 import net.minecraft.entity.EntityLivingBase
 import net.minecraft.entity.player.EntityPlayer
@@ -86,5 +88,11 @@ abstract class RCTileBase : TileEntity() {
     }
 
     open fun onTileRemoved(world: World, pos: BlockPos, state: IBlockState) {}
+
+    //    Container    //
+
+    fun openGui(player: EntityPlayer) {
+        player.openGui(RagiChemistry.INSTANCE, RCGuiHandler.TileID, world, pos.x, pos.y, pos.z)
+    }
 
 }

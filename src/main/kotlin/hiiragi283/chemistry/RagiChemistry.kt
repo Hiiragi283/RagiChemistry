@@ -2,6 +2,7 @@ package hiiragi283.chemistry
 
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.common.event.*
+import net.minecraftforge.fml.common.network.NetworkRegistry
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
 
@@ -17,6 +18,10 @@ object RagiChemistry {
 
     val LOGGER: Logger = LogManager.getLogger(RCReference.MOD_NAME)
 
+    //Instanceの宣言
+    @Mod.Instance(RCReference.MOD_ID)
+    var INSTANCE: RagiChemistry = this
+
     @Mod.EventHandler
     fun onConstruct(event: FMLConstructionEvent) {
     }
@@ -28,6 +33,8 @@ object RagiChemistry {
 
     @Mod.EventHandler
     fun onInit(event: FMLInitializationEvent) {
+        RCBlocks.registerOreDict()
+        RCBlocks.registerRecipe()
     }
 
     @Mod.EventHandler
@@ -36,6 +43,7 @@ object RagiChemistry {
 
     @Mod.EventHandler
     fun onComplete(event: FMLLoadCompleteEvent) {
+        NetworkRegistry.INSTANCE.registerGuiHandler(INSTANCE, RCGuiHandler)
     }
 
 }

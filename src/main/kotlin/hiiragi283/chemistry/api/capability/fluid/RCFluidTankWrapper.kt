@@ -1,4 +1,4 @@
-package hiiragi283.chemistry.capability.fluid
+package hiiragi283.chemistry.api.capability.fluid
 
 import net.minecraft.nbt.NBTTagCompound
 import net.minecraft.nbt.NBTTagList

@@ -1,4 +1,4 @@
-package hiiragi283.chemistry.tile
+package hiiragi283.chemistry.api.tile
 
 import hiiragi283.chemistry.RCReference
 import net.minecraft.util.text.TextComponentTranslation

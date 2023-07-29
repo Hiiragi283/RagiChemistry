@@ -1,7 +1,5 @@
 package hiiragi283.chemistry
 
-import hiiragi283.chemistry.RCReference
-import hiiragi283.chemistry.RagiChemistry
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin
 import zone.rong.mixinbooter.IEarlyMixinLoader
 

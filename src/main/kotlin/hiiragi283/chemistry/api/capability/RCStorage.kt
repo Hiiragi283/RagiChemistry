@@ -1,4 +1,4 @@
-package hiiragi283.chemistry.capability
+package hiiragi283.chemistry.api.capability
 
 import net.minecraft.nbt.NBTBase
 import net.minecraft.util.EnumFacing

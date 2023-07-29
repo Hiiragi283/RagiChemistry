@@ -1,4 +1,4 @@
-package hiiragi283.chemistry.capability
+package hiiragi283.chemistry.api.capability
 
 interface CapabilityIO<T : Any> {
 

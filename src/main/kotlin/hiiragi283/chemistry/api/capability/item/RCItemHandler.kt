@@ -1,12 +1,13 @@
-package hiiragi283.chemistry.capability.item
+package hiiragi283.chemistry.api.capability.item
 
-import hiiragi283.chemistry.capability.CapabilityIO
-import hiiragi283.chemistry.capability.IOType
-import hiiragi283.chemistry.tile.RCTileBase
+import hiiragi283.chemistry.api.capability.CapabilityIO
+import hiiragi283.chemistry.api.capability.IOType
+import hiiragi283.chemistry.api.tile.RCTileBase
 import net.minecraft.item.ItemStack
 import net.minecraftforge.items.ItemStackHandler
 
-open class RCItemHandler<T : RCTileBase>(slots: Int, val tile: T) : ItemStackHandler(slots), CapabilityIO<RCItemHandler<*>> {
+open class RCItemHandler(slots: Int, val tile: RCTileBase) : ItemStackHandler(slots),
+    CapabilityIO<RCItemHandler> {
 
     override fun onContentsChanged(slot: Int) {
         tile.markDirty()
@@ -18,7 +19,7 @@ open class RCItemHandler<T : RCTileBase>(slots: Int, val tile: T) : ItemStackHan
 
     override fun getIOType(): IOType = ioType
 
-    override fun setIOType(type: IOType): RCItemHandler<T> = also { ioType = type }
+    override fun setIOType(type: IOType): RCItemHandler = also { ioType = type }
 
     //    Custom    //
 

@@ -8,7 +8,8 @@
     "MixinBlockFire",
     "MixinBlockMagma",
     "MixinBlockStaticLiquid",
-    "MixinBlockTorch"
+    "MixinBlockTorch",
+    "MixinFluidBlockBase"
   ],
   "server": [],
   "client": [],

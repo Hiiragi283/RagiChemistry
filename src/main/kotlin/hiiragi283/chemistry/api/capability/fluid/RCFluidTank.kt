@@ -1,7 +1,7 @@
-package hiiragi283.chemistry.capability.fluid
+package hiiragi283.chemistry.api.capability.fluid
 
-import hiiragi283.chemistry.capability.CapabilityIO
-import hiiragi283.chemistry.capability.IOType
+import hiiragi283.chemistry.api.capability.CapabilityIO
+import hiiragi283.chemistry.api.capability.IOType
 import net.minecraft.nbt.NBTTagCompound
 import net.minecraftforge.common.util.INBTSerializable
 import net.minecraftforge.fluids.FluidStack

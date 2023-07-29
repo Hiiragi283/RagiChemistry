@@ -1,4 +1,4 @@
-package hiiragi283.chemistry.capability
+package hiiragi283.chemistry.api.capability
 
 import net.minecraft.nbt.NBTTagCompound
 import net.minecraft.util.EnumFacing
@@ -11,10 +11,12 @@ import net.minecraftforge.common.util.INBTSerializable
  * Source: https://github.com/SkyTheory/SkyTheoryLib/blob/1.12.2/java/skytheory/lib/capability/DataProvider.java
  */
 
-class RCCapabilityProvider<T>(
+@Suppress("UNCHECKED_CAST")
+class RCCapabilityProvider<T : Any>(
     private val capability: Capability<T>,
-    private val instance: T
-) : ICapabilitySerializable<NBTTagCompound> where T : Any, T : INBTSerializable<NBTTagCompound> {
+    private val instance: T,
+    private val serializer: INBTSerializable<NBTTagCompound> = instance as INBTSerializable<NBTTagCompound>
+) : ICapabilitySerializable<NBTTagCompound> {
 
     //    ICapability    //
 
@@ -26,9 +28,9 @@ class RCCapabilityProvider<T>(
 
     //    INBTSerializable<NBTTagCompound>    //
 
-    override fun serializeNBT(): NBTTagCompound = instance.serializeNBT()
+    override fun serializeNBT(): NBTTagCompound = serializer.serializeNBT()
 
     override fun deserializeNBT(nbt: NBTTagCompound) {
-        instance.deserializeNBT(nbt)
+        serializer.deserializeNBT(nbt)
     }
 }
